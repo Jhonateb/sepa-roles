@@ -12,10 +12,8 @@ export const LoginPage = () => {
     e.preventDefault();
     setError('');
     try {
-      // Usamos nuestro servicio 'api' para llamar al endpoint de login
       const response = await api.post('/auth/login', { email, password });
       
-      // Si el login es exitoso, guardamos el token en el store de Zustand
       const token = response.data.access_token;
       if (token) {
         setToken(token);

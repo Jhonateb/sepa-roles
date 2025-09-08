@@ -5,7 +5,6 @@ import { User } from 'src/users/entities/user.entity';
 import { Role } from 'src/roles/entities/role.entity';
 
 @Module({
-  // Importamos TypeOrmModule para poder inyectar los repositorios
   imports: [TypeOrmModule.forFeature([User, Role])],
   providers: [SeederService],
 })

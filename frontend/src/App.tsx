@@ -10,8 +10,6 @@ function App() {
     return <LoginPage />;
   }
 
-  // Si el usuario está autenticado, muestra el layout privado
-  // y dentro, la página de Tours.
   return (
     <PrivateLayout>
       <ToursPage />

@@ -18,7 +18,6 @@ export class ToursService {
   }
 
   findAll() {
-    // Esta es la línea clave: ahora devuelve una promesa de un arreglo de tours
     return this.tourRepository.find();
   }
 
@@ -29,7 +28,6 @@ export class ToursService {
   async update(id: string, updateTourDto: UpdateTourDto) {
     const tour = await this.findOne(id);
     if (!tour) {
-      // Manejar el caso de que el tour no se encuentre
       return null;
     }
     this.tourRepository.merge(tour, updateTourDto);

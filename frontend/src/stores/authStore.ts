@@ -79,7 +79,6 @@ export const useAuthStore = create(
   const storedState = JSON.parse(str);
   const ability = buildAbility(storedState.state.ability || []);
   
-  // ¡CORRECTO! Se devuelve el objeto reconstruido y funcional
   return {
     ...storedState,
     state: { ...storedState.state, ability },

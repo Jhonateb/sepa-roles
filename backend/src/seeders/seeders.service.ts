@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '../users/entities/user.entity';
 import { Role } from '../roles/entities/role.entity';
-import * as bcrypt from 'bcrypt'; // <-- 1. Asegúrate de que bcrypt esté importado
+import * as bcrypt from 'bcrypt'; 
 
 @Injectable()
 export class SeederService implements OnModuleInit {
@@ -20,7 +20,6 @@ export class SeederService implements OnModuleInit {
   }
 
   async seed() {
-    // --- 1. Sembrar Roles ---
     const rolesToCreate = ['admin', 'editor', 'viewer', 'creator', 'creator_deleter'];
     for (const roleName of rolesToCreate) {
       const roleExists = await this.roleRepository.findOne({ where: { name: roleName } });
@@ -31,7 +30,6 @@ export class SeederService implements OnModuleInit {
       }
     }
 
-    // --- 2. Sembrar Usuarios ---
     const roles = await this.roleRepository.find();
     const usersToCreate = [
       {
@@ -69,7 +67,7 @@ export class SeederService implements OnModuleInit {
           const user = this.userRepository.create({
             nombre: userData.nombre,
             email: userData.email,
-            password: userData.password, // Le pasas la contraseña en texto plano
+            password: userData.password, 
             roles: [role],
           });
           await this.userRepository.save(user);

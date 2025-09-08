@@ -3,12 +3,12 @@ import { ToursService } from './tours.service';
 import { ToursController } from './tours.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Tour } from './entities/tour.entity';
-import { CaslModule } from '../casl/casl.module'; // <-- 1. Importar
+import { CaslModule } from '../casl/casl.module'; 
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Tour]),
-    CaslModule, // <-- 2. Añadir aquí
+    CaslModule, 
   ],
   controllers: [ToursController],
   providers: [ToursService],

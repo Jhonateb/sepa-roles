@@ -9,7 +9,7 @@ import { Action } from '../casl/casl-ability.factory';
 import { Tour } from './entities/tour.entity';
 
 @Controller('tours')
-@UseGuards(JwtAuthGuard, PoliciesGuard) // ¡Primero autentica, luego autoriza!
+@UseGuards(JwtAuthGuard, PoliciesGuard) 
 export class ToursController {
   constructor(private readonly toursService: ToursService) { }
 
@@ -25,7 +25,6 @@ export class ToursController {
     return this.toursService.findAll();
   }
 
-  // GET por ID no estaba en el prompt, pero se protegería igual que findAll
 
   @Patch(':id')
   @CheckPolicies((ability) => ability.can(Action.Update, Tour))

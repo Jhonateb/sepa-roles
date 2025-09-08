@@ -1,7 +1,5 @@
-// 1. El import va aquí arriba
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-// 2. La clase se define una sola vez
 @Entity({ name: 'tours' })
 export class Tour {
   @PrimaryGeneratedColumn('uuid')

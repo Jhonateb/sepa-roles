@@ -14,7 +14,6 @@ import { Tour } from './tours/entities/tour.entity';
 
 @Module({
   imports: [
-    // --- INICIA LA CONFIGURACIÓN ---
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost', // o la IP de tu servidor de BD
@@ -25,7 +24,6 @@ import { Tour } from './tours/entities/tour.entity';
       entities: [User, Role, Tour], // ¡Importante! Registra nuestras entidades
       synchronize: true, // Sincroniza el esquema de la BD (Solo para desarrollo)
     }),
-    // --- TERMINA LA CONFIGURACIÓN ---
     UsersModule,
     RolesModule,
     AuthModule,

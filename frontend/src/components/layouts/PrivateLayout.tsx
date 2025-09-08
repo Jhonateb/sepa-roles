@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAuthStore } from '../../stores/authStore';
 
-// Componente simple para la cabecera
 const Header = () => {
   const { user, logout } = useAuthStore();
   return (
@@ -20,13 +19,11 @@ const Header = () => {
   );
 };
 
-// Componente simple para la barra lateral
 const Sidebar = () => {
   return (
     <aside className="w-64 bg-gray-800 text-white p-4">
       <nav>
         <ul>
-          {/* Aquí irían los enlaces de navegación */}
           <li className="mb-2"><a href="#" className="hover:text-blue-300">Dashboard</a></li>
           <li className="mb-2"><a href="#" className="hover:text-blue-300">Tours</a></li>
         </ul>
@@ -35,7 +32,6 @@ const Sidebar = () => {
   );
 };
 
-// El componente principal del Layout
 export const PrivateLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-screen bg-gray-100">
@@ -43,7 +39,7 @@ export const PrivateLayout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex-1 flex flex-col">
         <Header />
         <main className="flex-1 p-8">
-          {children} {/* Aquí se renderizará el contenido de la página actual */}
+          {children} 
         </main>
       </div>
     </div>
